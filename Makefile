@@ -1,4 +1,5 @@
 CC=gcc
+CXX=g++
 BASE_DIR= .
 BASE_INC= ${BASE_DIR}/include
 
@@ -11,20 +12,20 @@ COMPILE_DIR=compile
 FLAG= ${LIBDIR} ${LIB} ${INC} -O3 -std=gnu89 -Wall -W -DNDEBUG
 
 
-TARGET=GI.so
-SRCS=$(wildcard src/*.c)
+TARGET=GI
+SRCS=$(wildcard src/*.cpp)
 SRCSNOTDIR=$(notdir $(SRCS))
-OBJS=$(patsubst %.c, compile/%.o, $(SRCSNOTDIR)) 
+OBJS=$(patsubst %.cpp, compile/%.o, $(SRCSNOTDIR)) 
 
 .PHONY: clean 
 
 #$(shell if [ -f $(COMPILE_DIR) ]; then echo "Existed!"; else echo "NO" ;  fi;)
 
 $(TARGET):$(OBJS)
-	${CC} -o $@ $^ ${FLAG} 
+	${CXX} -o $@ $^ ${FLAG} 
 
-compile/%.o:src/%.c
-	${CC} -o $@ -c $< ${FLAG} 
+compile/%.o:src/%.cpp
+	${CXX} -o $@ -c $< ${FLAG} 
 
 clean :
 	rm -rf $(TARGET) $(OBJS) 

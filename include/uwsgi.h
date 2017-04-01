@@ -1,5 +1,5 @@
+#include <inttypes.h>
 namespace GI {
-
 typedef struct uwsgi_packet_header {
     uint8_t modifier1;
     uint16_t datasize;

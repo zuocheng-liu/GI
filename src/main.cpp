@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
         //recvline[n] = 0;
         printf("%s\n", recvline);
     }
-    char * res="HTTP/1.1 200 OK \r\nHello world!"; 
+    char res[]="HTTP/1.1 200 OK \r\nHello world!"; 
     write(connfd, res, strlen(res));
     close(connfd);
     close(listenfd);
