@@ -55,7 +55,7 @@ class TServerSocket : public TServerTransport {
 
  protected:
   boost::shared_ptr<TTransport> acceptImpl();
-
+ 
  private:
   int port_;
   int serverSocket_;
@@ -76,7 +76,8 @@ class TServerSocketTransportFactory : public TTransportFactory {
     TServerSocketTransportFactory() {}
     virtual ~TServerSocketTransportFactory() {}
     virtual boost::shared_ptr<TTransport> getTransport(boost::shared_ptr<TTransport> trans) {
-      return boost::shared_ptr<TTransport>(new TServerSocket(trans));
+      //return boost::shared_ptr<TTransport>(new TServerSocket(trans));
+      return trans;
     }
 };
 

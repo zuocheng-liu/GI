@@ -1,0 +1,112 @@
+In file included from include/boost/smart_ptr/shared_ptr.hpp:28:0,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/detail/shared_count.hpp:395:33: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     explicit shared_count( std::auto_ptr<Y> & r ): pi_( new sp_counted_impl_p<Y>( r.get() ) )
+                                 ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp:242:65: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+ template< class T, class R > struct sp_enable_if_auto_ptr< std::auto_ptr< T >, R >
+                                                                 ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp:441:31: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+                               ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp:454:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+                      ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp:520:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     shared_ptr & operator=( std::auto_ptr<Y> & r )
+                                  ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp:529:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+     shared_ptr & operator=( std::auto_ptr<Y> && r )
+                                  ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+In file included from include/boost/shared_ptr.hpp:17:0,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+include/boost/smart_ptr/shared_ptr.hpp: In member function 'boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(std::auto_ptr<_Up>&&)':
+include/boost/smart_ptr/shared_ptr.hpp:531:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+         this_type( static_cast< std::auto_ptr<Y> && >( r ) ).swap( *this );
+                                      ^
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/memory:81:0,
+                 from include/boost/config/no_tr1/memory.hpp:21,
+                 from include/boost/smart_ptr/shared_ptr.hpp:23,
+                 from include/boost/shared_ptr.hpp:17,
+                 from thrift/concurrency/ThreadManager.h:23,
+                 from src/main.cpp:10:
+/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^
+src/main.cpp: In function 'int main(int, char**)':
+src/main.cpp:30:47: error: expected type-specifier before 'UwsgiProcessor'
+   boost::shared_ptr<TProcessor> processor(new UwsgiProcessor());
+                                               ^
+scons: *** [src/main.o] Error 1

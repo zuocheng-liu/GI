@@ -17,8 +17,8 @@
  * under the License.
  */
 
-#ifndef STATSPROCESSOR_H
-#define STATSPROCESSOR_H
+#ifndef UWSGI_PROCESSOR_H
+#define UWSGI_PROCESSOR_H
 
 #include <boost/shared_ptr.hpp>
 #include <transport/TTransport.h>
@@ -37,7 +37,8 @@ public:
   virtual bool process(boost::shared_ptr<apache::thrift::protocol::TProtocol> in, boost::shared_ptr<apache::thrift::protocol::TProtocol> out) {
       out->writeBinary("HTTP/1.1 200 OK \r\nHello world!");
       return true;
-  };
+  }
+};
 
 }}} // apache::thrift::processor
 
