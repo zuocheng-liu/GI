@@ -7,37 +7,41 @@
 #include <netinet/in.h>
 
 #include "uwsgi.h"
+#include <concurrency/ThreadManager.h>
+#include <concurrency/PosixThreadFactory.h>
+#include <protocol/TBinaryProtocol.h>
+#include <server/TSimpleServer.h>
+#include <server/TThreadPoolServer.h>
+#include <server/TThreadedServer.h>
+#include <transport/TServerSocket.h>
+#include <transport/TTransportUtils.h>
 
 using namespace std;
 
+using namespace apache::thrift;
+using namespace apache::thrift::protocol;
+using namespace apache::thrift::transport;
+using namespace apache::thrift::server;
+
+using namespace tutorial;
+using namespace shared;
+
+using namespace boost;
+
 int main(int argc, char **argv) {
-    int listenfd;
-    int connfd;
-    struct sockaddr_in servaddr;
+  shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
+  shared_ptr<TProcessor> processor(new UwsgiProcessor());
+  shared_ptr<TServerTransport> serverTransport(new TServerSocket(9090));
+  shared_ptr<TTransportFactory> transportFactory(new TServerSocketTransportFactory());
 
-    listenfd = socket(PF_INET, SOCK_STREAM, 0);
+  TSimpleServer server(processor,
+      serverTransport,
+      transportFactory,
+      protocolFactory);
+  
+  printf("Starting the server...\n");
+  server.serve();
+  printf("done.\n");
+  return 0;
 
-    bzero(&servaddr, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servaddr.sin_port = htons(9090);
-
-    bind(listenfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
-
-    listen(listenfd, 10);
-    connfd = accept(listenfd, (struct sockaddr *)NULL, NULL);
-
-    int n;
-    char recvline[1024];
-
-    while((n=read(connfd, recvline, 1024)) > 0) {
-        //recvline[n] = 0;
-        printf("%s\n", recvline);
-    }
-    char res[]="HTTP/1.1 200 OK \r\nHello world!"; 
-    write(connfd, res, strlen(res));
-    close(connfd);
-    close(listenfd);
-
-    return 1;
 }

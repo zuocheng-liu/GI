@@ -71,6 +71,15 @@ class TServerSocket : public TServerTransport {
   int intSock2_;
 };
 
+class TServerSocketTransportFactory : public TTransportFactory {
+  public:
+    TServerSocketTransportFactory() {}
+    virtual ~TServerSocketTransportFactory() {}
+    virtual boost::shared_ptr<TTransport> getTransport(boost::shared_ptr<TTransport> trans) {
+      return boost::shared_ptr<TTransport>(new TServerSocket(trans));
+    }
+};
+
 }}} // apache::thrift::transport
 
 #endif // #ifndef _THRIFT_TRANSPORT_TSERVERSOCKET_H_

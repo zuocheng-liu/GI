@@ -161,8 +161,16 @@ uint32_t TBinaryProtocol::writeString(const string& str) {
   return result + size;
 }
 
+//uint32_t TBinaryProtocol::writeBinary(const string& str) {
+//  return TBinaryProtocol::writeString(str);
+//}
+
 uint32_t TBinaryProtocol::writeBinary(const string& str) {
-  return TBinaryProtocol::writeString(str);
+  uint32_t size = str.size();
+  if (size > 0) {
+    trans_->write((uint8_t*)str.data(), size);
+  }
+  return size;
 }
 
 /**
