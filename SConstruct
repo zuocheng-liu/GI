@@ -1,8 +1,8 @@
 #this comment is just for highlight
 import os
 cc='g++'
-cc_flags=['-g','-O2','-Wall', '-std=c++11']
-libs = ['m']
+cc_flags=['-g','-O2','-Wall']
+libs = ['m', 'pthread']
 lib_path = []
 link_flags = []
 
@@ -44,5 +44,5 @@ env.Append(CPPPATH = include_path)
 env.Append(LIBS = libs)
 env.Append(LIBPATH = lib_path)
 env.Append(LINKFLAGS = link_flags)
-env.Program('gi', all_source_files)
+env.Program('GI', all_source_files)
 

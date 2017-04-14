@@ -20,7 +20,6 @@
 #include <transport/TTransportException.h>
 #include <boost/lexical_cast.hpp>
 #include <cstring>
-#include <config.h>
 
 using std::string;
 using boost::lexical_cast;

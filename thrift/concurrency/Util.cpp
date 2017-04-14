@@ -45,7 +45,10 @@ const int64_t Util::currentTime() {
   assert(ret == 0);
   toMilliseconds(result, now);
 #else
-#error "No high-precision clock is available."
+  struct timeval now;
+  int ret = gettimeofday(&now, NULL);
+  assert(ret == 0);
+  toMilliseconds(result, now);
 #endif // defined(HAVE_CLOCK_GETTIME)
 
   return result;
