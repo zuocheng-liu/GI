@@ -35,8 +35,13 @@ class UwsgiProcessor : public apache::thrift::TProcessor {
 public:
 
   virtual bool process(boost::shared_ptr<apache::thrift::protocol::TProtocol> in, boost::shared_ptr<apache::thrift::protocol::TProtocol> out) {
-      out->writeBinary("HTTP/1.1 200 OK \r\nHello world!");
-      return true;
+    int8_t byte;
+    for (int i = 0 ; i < 1024 ; i++) {
+      in->readByte(byte);
+      GlobalOutput.printf("%d", byte);
+    }
+    out->writeBinary("HTTP/1.1 200 OK \r\nHello world!");
+    return true;
   }
 };
 
