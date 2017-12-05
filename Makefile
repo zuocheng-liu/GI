@@ -3,7 +3,7 @@ CXX=g++
 BASE_DIR= .
 BASE_INC= ${BASE_DIR}/include
 
-INC= -I${BASE_INC}
+INC= -I${BASE_INC} -Ithrift
 LIBDIR= 
 LIB= 
 COMPILE_DIR=compile
@@ -29,5 +29,3 @@ compile/%.o:src/%.cpp
 
 clean :
 	rm -rf $(TARGET) $(OBJS) 
-
-

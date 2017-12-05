@@ -1,13 +1,14 @@
 #this comment is just for highlight
 import os
 cc='g++'
-cc_flags=['-g','-O2','-Wall']
+cc_flags=['-g','-O2','-Wall', '-std=gnu++98']
 libs = ['m', 'pthread']
 lib_path = []
 link_flags = []
 
 include_path = [
   'include',
+  'FastCGI',
   'thrift',
   'thrift/concurrency',
   'thrift/processor',
@@ -19,6 +20,7 @@ include_path = [
 source_path = [
   'src',
   'thrift',
+  'FastCGI',
   'thrift/concurrency',
   'thrift/processor',
   'thrift/protocol',
