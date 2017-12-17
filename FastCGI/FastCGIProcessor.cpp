@@ -56,7 +56,4 @@ bool FastCGIProcessor::process(boost::shared_ptr<apache::thrift::protocol::TProt
     //in->getInputTransport()->close();
     return false;
   }
-
-
-
 } // end namespace FastCGI
